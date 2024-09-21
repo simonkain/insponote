@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机写作题目</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #prompt {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="prompt">点击下方按钮以抽取写作题目</div>
+        <button onclick="generatePrompt()">抽取题目</button>
+    </div>
+
+    <script>
+        const prompts = [
+            "写下你最难忘的一个瞬间",
+            "描述你梦想中的一天",
+            "如果你可以回到过去，你想改变什么？",
+            "一封给未来自己的信",
+            "你最近学习到的一个重要教训是什么？"
+        ];
+
+        function generatePrompt() {
+            const randomIndex = Math.floor(Math.random() * prompts.length);
+            document.getElementById('prompt').innerText = prompts[randomIndex];
+        }
+    </script>
+</body>
+</html>
